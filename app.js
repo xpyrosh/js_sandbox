@@ -1,24 +1,32 @@
-// Log to console
-console.log('Hello World');
-console.log(123);
-console.log(true);
-const greeting = 'Hello';
-console.log(greeting);
-console.log([1,3,5]);
-console.log({a:1, b:2});
-console.table({a:1, b:2});
+// Variables
+// var, let, const
+// let and const are ES6 and the only ones you should use
 
-console.error('This is some error');
-console.clear();
-console.warn('This is a warning');
-console.time('Hello');
-    console.log('Hello World');
-    console.log('Hello World');
-    console.log('Hello World');
-    console.log('Hello World');
-    console.log('Hello World');
-console.timeEnd('Hello');
+// var name = 'John Doe';
+// console.log(name);
 
-/*
-    This course is going to make use of the browsers console to test and run js code
-*/
+// var name = 'Steve Smith';
+// console.log(name);
+
+// // Init Var
+// var greeting;
+// console.log(greeting);
+
+// greeting = 'Hello';
+// console.log(greeting);
+
+// can only include letters, numbers, _, $
+// Can not start with number
+// var 1name = 'Test';
+
+// let name;
+// name = 'John Doe';
+// console.log(name);
+
+// name = 'Steve Smith';
+// console.log(name);
+
+const name = 'John';
+console.log(name);
+// Cannot reassign or undefined
+// Is Mutable
