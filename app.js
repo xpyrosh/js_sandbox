@@ -1,23 +1,33 @@
-let val;
+// // document.getElementById()
 
-val = document;
-val = document.all;
-val = document.all[0];
-val = document.all.length;
-val = document.head;
-val = document.characterSet;
+// console.log(document.getElementById('task-title'));
 
-val = document.forms;
-val = document.forms[0];
-val = document.forms[0].id;
+// // Get things from the element
 
-let scripts = document.scripts;
+// console.log(document.getElementById('task-title').id);
 
-let scriptsArr = Array.from(scripts);
+// const taskTitle = document.getElementById('task-title');
 
-scriptsArr.forEach(fuction(script) {
-    console.log(script.getAttribute('src'));
-    
-});
+// // Change styling
+// console.log(taskTitle.style.background = "#333");
+// console.log(taskTitle.style.color = "#fff");
+// console.log(taskTitle.style.padding = '5px');
+// // console.log(taskTitle.style.display = 'none');
 
-console.log(val);
+// // Change content
+// console.log(taskTitle.textContent = 'Task List');
+// console.log(taskTitle.innerText = 'My Tasks');
+// console.log(taskTitle.innerHTML = '<span style="color:red">Task List</span>');
+
+console.log(document.querySelector('#task-title'));
+console.log(document.querySelector('.card-title'));
+console.log(document.querySelector('h5'));
+
+document.querySelector('li').style.color = 'red';
+document.querySelector('ul li').style.color = 'blue';
+
+document.querySelector('li:last-child').style.color = 'red';
+document.querySelector('li:nth-child(3)').style.color = 'yellow';
+document.querySelector('li:nth-child(4)').textContent = 'Hello World';
+document.querySelector('li:nth-child(odd)').style.background = "#ccc";
+document.querySelector('li:nth-child(even)').style.background = "#f4f4f4";
