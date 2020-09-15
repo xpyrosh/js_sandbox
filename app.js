@@ -1,32 +1,23 @@
-// Variables
-// var, let, const
-// let and const are ES6 and the only ones you should use
+let val;
 
-// var name = 'John Doe';
-// console.log(name);
+val = document;
+val = document.all;
+val = document.all[0];
+val = document.all.length;
+val = document.head;
+val = document.characterSet;
 
-// var name = 'Steve Smith';
-// console.log(name);
+val = document.forms;
+val = document.forms[0];
+val = document.forms[0].id;
 
-// // Init Var
-// var greeting;
-// console.log(greeting);
+let scripts = document.scripts;
 
-// greeting = 'Hello';
-// console.log(greeting);
+let scriptsArr = Array.from(scripts);
 
-// can only include letters, numbers, _, $
-// Can not start with number
-// var 1name = 'Test';
+scriptsArr.forEach(fuction(script) {
+    console.log(script.getAttribute('src'));
+    
+});
 
-// let name;
-// name = 'John Doe';
-// console.log(name);
-
-// name = 'Steve Smith';
-// console.log(name);
-
-const name = 'John';
-console.log(name);
-// Cannot reassign or undefined
-// Is Mutable
+console.log(val);
