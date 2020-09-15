@@ -1,33 +1,52 @@
-// // document.getElementById()
+// // document.getElementsByClassName
 
-// console.log(document.getElementById('task-title'));
+// const items = document.getElementsByClassName('collection-item');
 
-// // Get things from the element
+// console.log(items);
+// console.log(items[0]);
 
-// console.log(document.getElementById('task-title').id);
+// items[0].style.color = 'red';
+// items[3].textContent = 'Hello';
 
-// const taskTitle = document.getElementById('task-title');
+// const listItems = document.querySelector('ul').getElementsByClassName('collection-item');
 
-// // Change styling
-// console.log(taskTitle.style.background = "#333");
-// console.log(taskTitle.style.color = "#fff");
-// console.log(taskTitle.style.padding = '5px');
-// // console.log(taskTitle.style.display = 'none');
+// console.log(listItems);
 
-// // Change content
-// console.log(taskTitle.textContent = 'Task List');
-// console.log(taskTitle.innerText = 'My Tasks');
-// console.log(taskTitle.innerHTML = '<span style="color:red">Task List</span>');
+// // document.getElementsByTagName
 
-console.log(document.querySelector('#task-title'));
-console.log(document.querySelector('.card-title'));
-console.log(document.querySelector('h5'));
+// let lis = document.getElementsByTagName('li');
 
-document.querySelector('li').style.color = 'red';
-document.querySelector('ul li').style.color = 'blue';
+// console.log(lis);
+// console.log(lis[0]);
 
-document.querySelector('li:last-child').style.color = 'red';
-document.querySelector('li:nth-child(3)').style.color = 'yellow';
-document.querySelector('li:nth-child(4)').textContent = 'Hello World';
-document.querySelector('li:nth-child(odd)').style.background = "#ccc";
-document.querySelector('li:nth-child(even)').style.background = "#f4f4f4";
+// lis[0].style.color = 'blue';
+// lis[3].textContent = 'World';
+
+// // Conv HTML collection to Arr
+// lis = Array.from(lis);
+
+// lis.reverse();
+
+// lis.forEach(function(li){
+//     console.log(li.className);
+// } )
+
+// document.querySelectorAll
+const items = document.querySelectorAll('ul.collection li.collection-item');
+
+items.forEach(function(item, index){
+    item.textContent = `${index}: Hello`;
+});
+
+const liOdd = document.querySelectorAll('li:nth-child(odd)');
+const liEven = document.querySelectorAll('li:nth-child(even)');
+
+liOdd.forEach(function(li, index){
+    li.style.background = "#ccc";
+});
+
+for(let i = 0; i < liEven.length; i++){
+    liEven[i].style.background = "#f4f4f4"
+}
+
+console.log(items);
