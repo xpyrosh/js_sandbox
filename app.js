@@ -1,53 +1,31 @@
-let val;
+// Create Element
+const li = document.createElement('li');
 
-const list = document.querySelector('ul.collection');
-const listItem = document.querySelector('li.collection-item:first-child');
+// Add Class
+li.className = 'collection-item';
 
-val = listItem;
-val = list;
+// Id Name
+li.id = 'new-item';
 
-// Get Child Nodes of UL
-val = list.childNodes; // Includes text spaces in between
-val = list.childNodes[0];
-val = list.childNodes[0].nodeName;
-val = list.childNodes[0].nodeType;
+// Add attributes
+li.setAttribute('title', 'New Item');
 
-// Types
-// 1 - Element
-// 2 - Attribute
-// 3 - Text Node
-// 8 - Comment
-// 9 - Document Itself
-// 10 - DocType
+// Create & Append text node
+li.appendChild(document.createTextNode('Hello World'));
 
-// Get children element nodes
-val = list.children;
-val = list.children[1];
-list.children[1].textContent = 'Hello';
-// Children of children
-val = list.children[3].children;
-list.children[3].children[0].id = 'test-link';
-val = list.children[3].children[0];
+// Create new link element
+const link = document.createElement('a');
 
-// First Child
-val = list.firstChild;
-val = list.firstElementChild;
+// Add classes
+link.className = 'delete-item secondary-content';
 
-// Last Child
-val = list.firstChild;
-val = list.firstElementChild;
+// Add icon html
+link.innerHTML = '<i class="fa fa-remove"></i>'
 
-// Count child elements
-val = list.childElementCount;
+// Append link to li
+li.appendChild(link);
 
-// Get parent node
-val = listItem.parentNode;
-val = listItem.parentElement;
-val = listItem.parentElement.parentElement;
+// Append Li as child to UL
+document.querySelector('ul.collection').appendChild(li);
 
-// Next Sibling
-val = listItem.nextSibling;
-val = listItem.nextElementSibling;
-val = listItem.nextElementSibling.nextElementSibling;
-
-console.log(val);
+console.log(li);
