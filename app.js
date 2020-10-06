@@ -2,45 +2,41 @@
 // Person.prototype
 
 // Person Constructor
-function Person(firstName, lastName, dob){
+function Person(firstName, lastName){
     this.firstName = firstName;
-    this.lastName = lastName;
-    this.birthday = new Date(dob);
-    // this.calculateAge = function(){
-    //     const diff = Date.now() - this.birthday.getTime();
-    //     const ageDate = new Date(diff);
-    //     return Math.abs(ageDate.getUTCFullYear() - 1970); 
-    // }
+    this.lastName = lastName; 
 }
 
-// Calculate Age - Move this function to the prototype
-Person.prototype.calculateAge = function(){
-    const diff = Date.now() - this.birthday.getTime();
-    const ageDate = new Date(diff);
-    return Math.abs(ageDate.getUTCFullYear() - 1970); 
+// Prototype Method
+Person.prototype.greeting = function() {
+    return `Hello there ${this.firstName} ${this.lastName}`;
 }
 
-// Get Full Name
-Person.prototype.getFullName = function(){
-    return `${this.firstName} ${this.lastName}`;
+const person1 = new Person('John', 'Doe');
+
+// console.log(person1.greeting());
+
+// Customer Constructor
+function Customer(firstName, lastName, phone, membership){
+    Person.call(this, firstName, lastName);
+    this.phone = phone;
+    this.membership = membership;
 }
 
-// Gets Married
-Person.prototype.getsMarried = function(newLastName){
-    this.lastName = newLastName;
+// Inherit Person Prototype to use methods
+Customer.prototype = Object.create(Person.prototype);
+
+// Make customer.prototype return Customer();
+Customer.prototype.constructor = Customer;
+
+// Create customer
+const customer1 = new Customer('Tom', 'Smith', '555-555-5555', 'Standard');
+
+console.log(customer1);
+
+// Overwrite greeting method
+Customer.prototype.greeting = function(){
+    return `Hello there ${this.firstName} ${this.lastName} Welcome to our Company.`;
 }
 
-
-const john = new Person('John', 'Doe', '1990-8-12');
-const mary = new Person('Mary', 'Sue', 'March 20 1998');
-
-console.log(mary.getFullName());
-console.log(john.getFullName());
-console.log(john.calculateAge());
-
-mary.getsMarried('Smith');
-
-console.log(mary.getFullName());
-
-console.log(mary.hasOwnProperty('firstName'));
-console.log(mary.hasOwnProperty('getFullName'));
+console.log(customer1.greeting());
