@@ -25,5 +25,7 @@ function getJokes(e) {
         }
     }
 
+    xhr.send();
+
     e.preventDefault();
 }
